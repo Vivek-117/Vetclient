@@ -1,0 +1,44 @@
+{
+  "appId": "com.dmbs.desktop",
+  "productName": "DMBS Desktop",
+  "directories": {
+    "output": "dist-electron"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/main.js",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "public",
+      "to": "public",
+      "filter": ["**/*"]
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/icon.ico",
+    "requestExecutionLevel": "user"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true
+  },
+  "buildDependenciesFromSource": true,
+  "nodeGypRebuild": true,
+  "packagerConfig": {
+    "icon": "public/icon"
+  },
+  "rebuildConfig": {
+    "rebuild": true
+  }
+}
